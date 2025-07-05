@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تحميل رواية رعب | ستة البيوت</title>
+
+  <!-- رابط خط Cairo من Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background: #121212;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      direction: rtl;
+    }
+
+    .container {
+      background: linear-gradient(145deg, #1a1a1a, #222);
+      max-width: 420px;
+      width: 100%;
+      border-radius: 15px;
+      padding: 25px 20px 40px;
+      box-shadow: 0 0 15px 3px #7f0000;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #f44336;
+      text-shadow: 0 0 10px #f44336;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #bbb;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .cover-img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px 3px #f44336aa;
+      margin-bottom: 25px;
+      user-select: none;
+    }
+
+    .description {
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      color: #ddd;
+      white-space: pre-line;
+      text-shadow: 0 0 3px #a10000;
+    }
+
+    button {
+      background: #f44336;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 14px 22px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #f44336cc;
+      transition: background 0.3s ease;
+      user-select: none;
+      margin-bottom: 20px;
+    }
+
+    button:hover:not(:disabled) {
+      background: #c1302a;
+      box-shadow: 0 0 18px #c1302acc;
+    }
+
+    button:disabled {
+      background: #822323;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .instructions {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      line-height: 1.4;
+      color: #eee;
+      margin-top: 20px;
+      box-shadow: 0 0 15px 3px #f4433666;
+      display: none;
+      user-select: none;
+    }
+
+    .share-btn {
+      background: #25d366;
+      margin-top: 15px;
+      box-shadow: 0 0 15px #25d366cc;
+      font-weight: 700;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      background: #333;
+      border-radius: 12px;
+      height: 22px;
+      margin-top: 30px;
+      box-shadow: inset 0 0 6px #111;
+      display: none;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #25d366, #128c34);
+      border-radius: 12px;
+      transition: width 0.6s ease;
+      box-shadow: 0 0 8px #25d366aa;
+    }
+
+    .progress-percent {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      height: 100%;
+      line-height: 22px;
+      color: #eee;
+      font-weight: 700;
+      text-shadow: 0 0 3px #000;
+      user-select: none;
+      pointer-events: none;
+      font-size: 14px;
+    }
+
+    .final-download-btn {
+      display: none;
+      background: #f44336;
+      margin-top: 25px;
+      padding: 14px 25px;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #f44336cc;
+    }
+
+    @media (max-width: 460px) {
+      .container { padding: 20px 15px 30px; }
+      .title { font-size: 24px; }
+      .subtitle, .description { font-size: 14px; }
+      button, .final-download-btn { font-size: 16px; padding: 12px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="تحميل رواية ستة البيوت">
+    <h1 class="title">رواية رعب: ستة البيوت</h1>
+    <p class="subtitle">الرواية اللي تخليك ما تقدرش تنام من الرعب!</p>
+
+    <img
+      src="https://www2.0zz0.com/2025/07/05/14/538717523.jpg"
+      alt="غلاف رواية ستة البيوت - قصة رعب"
+      class="cover-img"
+      draggable="false"
+    />
+
+    <div class="description" id="description">
+      نفسك تفتكر يوم ما دخل بيتكم القديم...  
+      بس الصورة اللي ظهرتك فيه لحالك؟  
+      وكل الذكريات بتتبخر كأنها ما حصلتش؟  
+
+      ستة البيوت دي مش مجرد رواية...  
+      دي لعنة عايشة جوة صفحاتها!
+    </div>
+
+    <button id="startDownloadBtn" aria-label="ابدأ تحميل الرواية">ابدأ التحميل</button>
+
+    <div class="instructions" id="instructions" aria-live="polite" aria-atomic="true">
+      <p>للمتابعة، شارك رابطنا مع أصدقائك واملى شريط التحميل بالتحويلات.</p>
+      <button id="shareBtn" class="share-btn" aria-label="شارك على واتساب">شارك على واتساب</button>
+    </div>
+
+    <div class="progress-bar-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="شريط تحميل">
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-percent" id="progressPercent">0%</div>
+    </div>
+
+    <button id="finalDownloadBtn" class="final-download-btn" aria-label="تحميل الرواية الآن" role="link">
+      حمّل الرواية الآن
+    </button>
+  </div>
+
+  <script>
+    const startDownloadBtn = document.getElementById('startDownloadBtn');
+    const description = document.getElementById('description');
+    const instructions = document.getElementById('instructions');
+    const shareBtn = document.getElementById('shareBtn');
+    const progressBarContainer = document.querySelector('.progress-bar-container');
+    const progressBar = document.getElementById('progressBar');
+    const progressPercent = document.getElementById('progressPercent');
+    const finalDownloadBtn = document.getElementById('finalDownloadBtn');
+
+    const downloadLink = 'https://drive.google.com/file/d/1Xlm4zfKq-hRFPtNMH7CUuuVDUmVEn36z/view?usp=drivesdk';
+    const shareMessage = encodeURIComponent(
+       "عايز تعيش تجربة رعب ولا في الخيال؟ 🕯️😱 انضم وعرف حكاية ستة البيوت بنفسك!  \https://whatsapp.com/channel/0029VbA3VuZK0IBoWqy2QD2D"
+    );
+
+    const progressSteps = [5, 20, 50, 75, 96, 100];
+    let progressIndex = 0;
+    let waitingForShare = false;
+
+    const STORAGE_PROGRESS = 'sixHousesProgress';
+    const STORAGE_WAIT = 'sixHousesWaiting';
+    const STORAGE_STARTED = 'sixHousesStarted';
+
+    function saveState() {
+      localStorage.setItem(STORAGE_PROGRESS, progressIndex);
+      localStorage.setItem(STORAGE_WAIT, waitingForShare ? '1' : '0');
+      localStorage.setItem(STORAGE_STARTED, startDownloadBtn.disabled ? '1' : '0');
+    }
+
+    function loadState() {
+      const idx = +localStorage.getItem(STORAGE_PROGRESS);
+      const wt = localStorage.getItem(STORAGE_WAIT);
+      const st = localStorage.getItem(STORAGE_STARTED);
+
+      if (st === '1') {
+        startDownloadBtn.disabled = true;
+        description.style.display = 'none';
+        instructions.style.display = 'block';
+      }
+
+      if (!isNaN(idx)) {
+        progressIndex = idx;
+        if (progressIndex > 0) {
+          progressBarContainer.style.display = 'block';
+          const p = progressSteps[Math.min(progressIndex - 1, progressSteps.length - 1)];
+          progressBar.style.width = p + '%';
+          progressPercent.textContent = p + '%';
+          progressBarContainer.setAttribute('aria-valuenow', p);
+        }
+      }
+
+      waitingForShare = wt === '1';
+
+      if (progressIndex === progressSteps.length) {
+        finalDownloadBtn.style.display = 'inline-block';
+        finalDownloadBtn.focus();
+      }
+    }
+
+    function resetProgress() {
+      progressIndex = 0;
+      waitingForShare = false;
+      progressBar.style.width = '0%';
+      progressPercent.textContent = '0%';
+      progressBarContainer.setAttribute('aria-valuenow', 0);
+      finalDownloadBtn.style.display = 'none';
+      saveState();
+    }
+
+    startDownloadBtn.addEventListener('click', () => {
+      startDownloadBtn.disabled = true;
+      description.style.display = 'none';
+      instructions.style.display = 'block';
+      progressBarContainer.style.display = 'none';
+      resetProgress();
+      saveState();
+    });
+
+    shareBtn.addEventListener('click', () => {
+      window.open(`https://wa.me/?text=${shareMessage}`, '_blank');
+      if (!waitingForShare && progressIndex < progressSteps.length) {
+        waitingForShare = true;
+        saveState();
+        progressBarContainer.style.display = 'block';
+
+        setTimeout(() => {
+          const p = progressSteps[progressIndex];
+          progressBar.style.width = p + '%';
+          progressPercent.textContent = p + '%';
+          progressBarContainer.setAttribute('aria-valuenow', p);
+
+          progressIndex++;
+          waitingForShare = false;
+          saveState();
+
+          if (p === 100) {
+            finalDownloadBtn.style.display = 'inline-block';
+            finalDownloadBtn.focus();
+          }
+        }, 5000);
+      }
+    });
+
+    finalDownloadBtn.addEventListener('click', () => {
+      window.location.href = downloadLink;
+    });
+
+    window.addEventListener('load', loadState);
+  </script>
+</body>
+</html>
